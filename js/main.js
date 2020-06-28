@@ -47,11 +47,11 @@ checkOf.addEventListener('click', function() {
 /* VALIDACION FORMULARIO */
 
 Formulario.addEventListener('submit', function(e) {
-    let verificar = Email.value;
+    let verificar = Email.value.replace(/.*@/,"").split(".")[0];
     let Nombre = document.querySelector('input#nombre').value;
+    let dominios=["hotmail","gmail","outlook"];
 
-
-    if (verificar.includes('hotmail') || verificar.includes('gmail') || verificar.includes('outlook')) {
+    if (dominios.includes(verificar)) {
 
         /* OPCIONAL ALERT// AQUI VA URL DEL SITIO WEB DIRIGIDO*/
         alert(`Bienvenido ${Nombre}`);
