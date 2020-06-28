@@ -1,0 +1,298 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+:root {
+    --colorRosa: rgb(248, 125, 146);
+    --fontPoppins: 'Poppins', sans-serif;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+
+/* GLOBALES */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-family: var(--fontPoppins);
+}
+
+.container {
+    max-width: 100%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+@media(max-width:480px) {
+    .container {
+        width: 95%;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+div.fond-pink {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: var(--colorRosa);
+    z-index: -2;
+    animation: fondo 1.5s ease;
+}
+
+div.fond-blue {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: rgb(92, 187, 250);
+    z-index: -2;
+    animation: fondo2 1.5s ease;
+    display: none;
+}
+
+
+/* CONTINER-GRID */
+
+div.container-flex {
+    display: flex;
+    height: 430px;
+    margin: 0 auto;
+    box-shadow: 0 0 50px #494848;
+    border-radius: 20px;
+}
+
+@media (max-width:480px) {
+    div.container-flex {
+        display: block;
+        height: 100%;
+    }
+}
+
+
+/* CAJA1 */
+
+div.caja1 {
+    background-color: var(--colorRosa);
+    padding: 30px 30px;
+    width: 50%;
+    color: #ffffff;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: relative;
+}
+
+@media (max-width:480px) {
+    div.caja1 {
+        width: 100%;
+        border-radius: 20px;
+    }
+}
+
+div.checked-flex {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+div.caja1 input {
+    outline: none;
+    border-radius: 80px;
+    width: 40px;
+    height: 20px;
+    position: relative;
+    -webkit-appearance: none;
+    background-color: rgb(255, 88, 116);
+    cursor: pointer;
+}
+
+div.caja1 input:checked {
+    background-color: rgb(96, 173, 245);
+}
+
+div.caja1 input::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    transform: scale(1.1);
+    transition: all .5s ease;
+}
+
+div.caja1 input:checked::before {
+    left: 20px;
+}
+
+div.caja1 h1 {
+    position: relative;
+    letter-spacing: 2px;
+}
+
+div.caja1 h1::before {
+    content: '';
+    width: 50px;
+    height: 10px;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: -18px;
+}
+
+div.caja1-titulo {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+}
+
+div.selectForm {
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+@media (max-width:480px) {
+    div.selectForm {
+        display: none;
+    }
+}
+
+div.select-i {
+    width: 60px;
+    height: 60px;
+    background-color: var(--colorRosa);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.select-i i {
+    font-size: 35px;
+}
+
+
+/* CAJA 2 */
+
+div.caja2 {
+    padding: 40px 40px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 70%;
+    background-color: #ffffff;
+    height: 100%;
+}
+
+@media (max-width: 480px) {
+    div.caja2 {
+        width: 100%;
+        border-radius: 20px;
+    }
+}
+
+div.caja2 .form-flex {
+    margin: 18px 0;
+}
+
+label.texto {
+    color: var(--colorRosa);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+div.caja2 .form-flex input {
+    margin: 10px 0;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 8px 10px;
+    box-shadow: 0 1px 2px #494949;
+    font-size: 15px;
+    color: rgb(87, 86, 86)
+}
+
+div.caja2 input.boton {
+    margin-top: 40px;
+    padding: 10px 10px;
+    outline: none;
+    background-color: rgb(251, 69, 99);
+    border: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+/* MENSAJE ERROR */
+
+div.error {
+    position: absolute;
+    display: none;
+}
+
+div.error p {
+    color: rgb(245, 33, 33);
+    font-size: 13px;
+}
+
+
+/* REGISTRADO */
+
+div.registrado {
+    display: none;
+}
+
+
+/* KEYFRAMES */
+
+@keyframes fondo {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes fondo2 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 50%;
+    }
+}
